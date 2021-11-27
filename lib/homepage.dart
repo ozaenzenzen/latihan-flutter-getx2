@@ -30,21 +30,54 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Obx(() {
-              return Text(
-                "Increment counter: ${incrementController.count.value}",
-                style: GoogleFonts.poppins(
-                  fontSize: 20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Obx: ",
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                  ),
                 ),
-              );
-            }),
+                Obx(() {
+                  return Text(
+                    "Increment counter: ${incrementController.count1.value}",
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                    ),
+                  );
+                }),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "GetBuilder: ",
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                  ),
+                ),
+                GetBuilder(
+                  init: IncrementController(),
+                  builder: (controller) => Text(
+                    "Increment counter: ${incrementController.count2}",
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(height: 10),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: Colors.green.shade800,
               ),
               onPressed: () {
-                incrementController.increment();
+                incrementController.increment1();
+                incrementController.increment2();
               },
               child: Text(
                 "Add",
