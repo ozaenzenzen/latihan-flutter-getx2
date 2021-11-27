@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_2/increment_controller.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,6 +11,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final IncrementController incrementController =
+      Get.put(IncrementController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +30,26 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Increment counter: 0"),
+            Obx(() {
+              return Text(
+                "Increment counter: ${incrementController.count.value}",
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                ),
+              );
+            }),
             const SizedBox(height: 10),
             ElevatedButton(
-              onPressed: () {},
-              child: const Text("Add"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green.shade800,
+              ),
+              onPressed: () {
+                incrementController.increment();
+              },
+              child: Text(
+                "Add",
+                style: GoogleFonts.poppins(),
+              ),
             ),
           ],
         ),
