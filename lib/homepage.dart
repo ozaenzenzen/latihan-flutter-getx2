@@ -11,8 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final IncrementController incrementController =
-      Get.put(IncrementController());
+  final IncreDecreController controller =
+      Get.put(IncreDecreController());
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Obx(() {
                   return Text(
-                    "Increment counter: ${incrementController.count1.value}",
+                    "Increment counter: ${controller.count1.value}",
                     style: GoogleFonts.poppins(
                       fontSize: 20,
                     ),
@@ -60,9 +60,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 GetBuilder(
-                  init: IncrementController(),
-                  builder: (controller) => Text(
-                    "Increment counter: ${incrementController.count2}",
+                  init: IncreDecreController(),
+                  builder: (builderController) => Text(
+                    "Increment counter: ${controller.count2}",
                     style: GoogleFonts.poppins(
                       fontSize: 20,
                     ),
@@ -71,18 +71,37 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 10),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.green.shade800,
-              ),
-              onPressed: () {
-                incrementController.increment1();
-                incrementController.increment2();
-              },
-              child: Text(
-                "Add",
-                style: GoogleFonts.poppins(),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green.shade800,
+                  ),
+                  onPressed: () {
+                    controller.increment1();
+                    controller.increment2();
+                  },
+                  child: Text(
+                    "Add",
+                    style: GoogleFonts.poppins(),
+                  ),
+                ),
+                const SizedBox(width:10),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green.shade800,
+                  ),
+                  onPressed: () {
+                    controller.decrement1();
+                    controller.decrement2();
+                  },
+                  child: Text(
+                    "Subtract",
+                    style: GoogleFonts.poppins(),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
