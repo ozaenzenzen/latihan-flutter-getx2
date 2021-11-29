@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_2/increment_controller.dart';
+import 'package:flutter_getx_2/incredecre_controller.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
