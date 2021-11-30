@@ -11,19 +11,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final IncreDecreController controller =
-      Get.put(IncreDecreController());
+  final IncreDecreController controller = Get.put(IncreDecreController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Train Getx 2",
-          style: GoogleFonts.poppins(),
-        ),
-        backgroundColor: Colors.green.shade800,
-        centerTitle: true,
+        title: const Text("Train Getx 2"),
       ),
       body: Container(
         alignment: Alignment.center,
@@ -33,19 +27,9 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Obx: ",
-                  style: GoogleFonts.poppins(
-                    fontSize: 20,
-                  ),
-                ),
+                const Text("Obx: "),
                 Obx(() {
-                  return Text(
-                    "Increment counter: ${controller.count1.value}",
-                    style: GoogleFonts.poppins(
-                      fontSize: 20,
-                    ),
-                  );
+                  return Text("Increment counter: ${controller.count1.value}");
                 }),
               ],
             ),
@@ -53,20 +37,11 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "GetBuilder: ",
-                  style: GoogleFonts.poppins(
-                    fontSize: 20,
-                  ),
-                ),
+                const Text("GetBuilder: "),
                 GetBuilder(
                   init: IncreDecreController(),
-                  builder: (builderController) => Text(
-                    "Increment counter: ${controller.count2}",
-                    style: GoogleFonts.poppins(
-                      fontSize: 20,
-                    ),
-                  ),
+                  builder: (builderController) =>
+                      Text("Increment counter: ${controller.count2}"),
                 ),
               ],
             ),
@@ -87,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                     style: GoogleFonts.poppins(),
                   ),
                 ),
-                const SizedBox(width:10),
+                const SizedBox(width: 10),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Colors.green.shade800,
