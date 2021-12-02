@@ -33,6 +33,7 @@ class _MyAppState extends State<MyApp> {
           title: 'Train Getx 2',
           debugShowCheckedModeBanner: false,
           theme: appThemeData,
+          defaultTransition: Transition.cupertino,
         );
       },
     );
