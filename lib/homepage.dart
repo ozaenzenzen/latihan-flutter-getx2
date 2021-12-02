@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_2/incredecre_controller.dart';
+import 'package:flutter_getx_2/secondpage.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -57,10 +58,7 @@ class _HomePageState extends State<HomePage> {
                     controller.increment1();
                     controller.increment2();
                   },
-                  child: Text(
-                    "Add",
-                    style: GoogleFonts.poppins(),
-                  ),
+                  child: const Text("Add"),
                 ),
                 const SizedBox(width: 10),
                 ElevatedButton(
@@ -71,12 +69,19 @@ class _HomePageState extends State<HomePage> {
                     controller.decrement1();
                     controller.decrement2();
                   },
-                  child: Text(
-                    "Subtract",
-                    style: GoogleFonts.poppins(),
-                  ),
+                  child: const Text("Subtract"),
                 ),
               ],
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green.shade800,
+              ),
+              onPressed: () {
+                Get.to(() => const SecondPage());
+              },
+              child: const Text("Next Page"),
             ),
           ],
         ),
