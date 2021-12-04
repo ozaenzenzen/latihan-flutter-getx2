@@ -13,13 +13,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  IncreDecreController? controller;
-  AppThemeController? appThemeController;
+  IncreDecreController? controller = Get.find<IncreDecreController>();
+  AppThemeController? appThemeController = Get.find<AppThemeController>();
 
   @override
   void initState() {
-    controller = Get.put(IncreDecreController());
-    appThemeController = Get.put(AppThemeController());
+    // controller = Get.put(IncreDecreController());
+    // appThemeController = Get.put(AppThemeController());
     super.initState();
   }
 
@@ -64,7 +64,8 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.green.shade800,
+                      primary: appThemeController!.currentColor.value,
+                      // primary: Colors.green.shade800,
                     ),
                     onPressed: () {
                       setState(() {
@@ -77,7 +78,8 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(width: 10),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.green.shade800,
+                      primary: appThemeController!.currentColor.value,
+                      // primary: Colors.green.shade800,
                     ),
                     onPressed: () {
                       setState(() {
@@ -105,7 +107,8 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.green.shade800,
+                  primary: appThemeController!.currentColor.value,
+                  // primary: Colors.green.shade800,
                 ),
                 onPressed: () {
                   Get.to(() => const SecondPage());
