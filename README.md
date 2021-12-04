@@ -1,6 +1,6 @@
 # flutter_getx_2
 
-A new Flutter project.
+Latihan getx untuk flutter
 
 ## Getting Started
 
