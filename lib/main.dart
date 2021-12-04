@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_2/apptheme_controller.dart';
 import 'package:flutter_getx_2/constants.dart';
+import 'package:flutter_getx_2/incredecre_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -18,14 +19,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   bool isChanged = false;
 
-  AppThemeController appThemeController = Get.put(AppThemeController());
-  
   @override
   Widget build(BuildContext context) {
-    appThemeController.activatedTheme();
     return ScreenUtilInit(
       builder: () {
         return GetMaterialApp(
@@ -34,6 +31,10 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           theme: appThemeData,
           defaultTransition: Transition.cupertino,
+          // onInit: () {
+          //   Get.put(IncreDecreController());
+          //   Get.put(AppThemeController());
+          // },
         );
       },
     );
