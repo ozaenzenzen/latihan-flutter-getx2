@@ -12,8 +12,8 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   ScreenUtil screenUtil = ScreenUtil();
-  // final appThemeController = Get.put(AppThemeController());
-  final appThemeController = Get.find();
+  final appThemeController = Get.put(AppThemeController());
+  // final appThemeController = Get.find();
 
   @override
   Widget build(BuildContext context) {
