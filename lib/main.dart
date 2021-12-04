@@ -31,10 +31,10 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           theme: appThemeData,
           defaultTransition: Transition.cupertino,
-          // onInit: () {
-          //   Get.put(IncreDecreController());
-          //   Get.put(AppThemeController());
-          // },
+          onInit: () {
+            Get.put(IncreDecreController());
+            Get.put(AppThemeController());
+          },
         );
       },
     );
