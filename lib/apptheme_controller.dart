@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+// ignore_for_file: avoid_print
+
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 class AppThemeController extends GetxController {
-  bool isActive = true;
+  // bool? isChanged = false;
 
   List<Color> appColor = [
     Colors.pink,
@@ -13,15 +17,37 @@ class AppThemeController extends GetxController {
     Colors.orange,
   ];
 
+  // Rx<Color> currentColor;
   Rx<Color> currentColor = Colors.blue.obs;
 
-  var base = 0;
+  colorNow() async {
+    final prefs = await SharedPreferences.getInstance();
+    bool? isChanged = prefs.getBool('isChanged');
+
+    print(isChanged);
+    if (isChanged == true) {
+      currentColor = Rx<Color>(appColor[prefs.getInt('colorNumber')!.toInt()]);
+      print("current color: $currentColor");
+    } else {
+      currentColor = Colors.blue.obs;
+    }
+  }
+
+  AppThemeController() {
+    colorNow();
+  }
 
   Random random = Random();
 
-  void activatedTheme() {
-    currentColor = Rx<Color>(appColor[random.nextInt(5)]);
-    // base = RxInt(random.nextInt(5));
+  void activatedTheme() async {
+    int randomInt = random.nextInt(5);
+
+    final prefs = await SharedPreferences.getInstance();
+
+    currentColor = Rx<Color>(appColor[randomInt]);
+
+    prefs.setBool('isChanged', true);
+    prefs.setInt('colorNumber', randomInt);
     update();
   }
 }
