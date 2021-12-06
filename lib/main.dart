@@ -4,6 +4,7 @@ import 'package:flutter_getx_2/constants.dart';
 import 'package:flutter_getx_2/incredecre_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'homepage.dart';
 
@@ -20,6 +21,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool isChanged = false;
+
+  AppThemeController appThemeController = AppThemeController();
 
   @override
   Widget build(BuildContext context) {
