@@ -20,6 +20,16 @@ class AppThemeController extends GetxController {
   // Rx<Color> currentColor;
   Rx<Color> currentColor = Colors.blue.obs;
 
+  Future<bool> changed() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('isChanged')!;
+  }
+
+  Future<int> nums() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt('colorNumber')!;
+  }
+
   colorNow() async {
     final prefs = await SharedPreferences.getInstance();
     bool? isChanged = prefs.getBool('isChanged');
@@ -33,8 +43,11 @@ class AppThemeController extends GetxController {
     }
   }
 
-  AppThemeController() {
+  AppThemeController({int number = 0, bool isChanged = false}) {
+    
     colorNow();
+    currentColor = Rx<Color>(appColor[number]);
+    
   }
 
   Random random = Random();
