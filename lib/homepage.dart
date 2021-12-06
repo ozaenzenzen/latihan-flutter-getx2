@@ -3,7 +3,6 @@ import 'package:flutter_getx_2/apptheme_controller.dart';
 import 'package:flutter_getx_2/incredecre_controller.dart';
 import 'package:flutter_getx_2/secondpage.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,8 +17,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // controller = Get.put(IncreDecreController());
-    // appThemeController = Get.put(AppThemeController());
     super.initState();
   }
 
