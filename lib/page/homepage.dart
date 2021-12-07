@@ -12,8 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  IncreDecreController? controller = Get.find<IncreDecreController>();
-  AppThemeController? appThemeController = Get.find<AppThemeController>();
+  IncreDecreController controller = Get.find<IncreDecreController>();
+  AppThemeController appThemeController = Get.find<AppThemeController>();
 
   @override
   void initState() {
@@ -23,11 +23,13 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Obx(() {
+      print("onstart value: ${appThemeController.currentColor.value}");
       return Scaffold(
         appBar: AppBar(
           title: const Text("Train Getx 2"),
-          backgroundColor: appThemeController!.currentColor.value,
+          backgroundColor: appThemeController.currentColor.value,
         ),
         body: Container(
           alignment: Alignment.center,
@@ -40,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                   const Text("Obx: "),
                   Obx(() {
                     return Text(
-                        "Increment counter: ${controller!.count1.value}");
+                        "Increment counter: ${controller.count1.value}");
                   }),
                 ],
               ),
@@ -52,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   GetBuilder(
                     init: IncreDecreController(),
                     builder: (builderController) =>
-                        Text("Increment counter: ${controller!.count2}"),
+                        Text("Increment counter: ${controller.count2}"),
                   ),
                 ],
               ),
@@ -62,13 +64,13 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: appThemeController!.currentColor.value,
+                      primary: appThemeController.currentColor.value,
                       // primary: Colors.green.shade800,
                     ),
                     onPressed: () {
                       setState(() {
-                        controller!.increment1();
-                        controller!.increment2();
+                        controller.increment1();
+                        controller.increment2();
                       });
                     },
                     child: const Text("Add"),
@@ -76,13 +78,13 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(width: 10),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: appThemeController!.currentColor.value,
+                      primary: appThemeController.currentColor.value,
                       // primary: Colors.green.shade800,
                     ),
                     onPressed: () {
                       setState(() {
-                        controller!.decrement1();
-                        controller!.decrement2();
+                        controller.decrement1();
+                        controller.decrement2();
                       });
                     },
                     child: const Text("Subtract"),
@@ -92,12 +94,12 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: appThemeController!.currentColor.value,
+                  primary: appThemeController.currentColor.value,
                   // primary: Colors.green.shade800,
                 ),
                 onPressed: () {
                   setState(() {
-                    appThemeController!.activatedTheme();
+                    appThemeController.activatedTheme();
                   });
                 },
                 child: const Text("Change AppBar Color"),
@@ -105,7 +107,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: appThemeController!.currentColor.value,
+                  primary: appThemeController.currentColor.value,
                   // primary: Colors.green.shade800,
                 ),
                 onPressed: () {
