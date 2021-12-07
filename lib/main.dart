@@ -18,8 +18,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool isChanged = false;
-
   AppThemeController appThemeController = AppThemeController();
 
   @override
