@@ -15,15 +15,19 @@ class AppThemeController extends GetxController {
     Colors.teal,
     Colors.purpleAccent,
     Colors.orange,
+    Colors.tealAccent,
+    Colors.green,
+    Colors.blue,
+    Colors.indigo,
   ];
 
   // Rx<Color> currentColor;
   Rx<Color> currentColor = Colors.blue.obs;
 
-  Future<bool> changed() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool('isChanged')!;
-  }
+  // Future<bool> changed() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   return prefs.getBool('isChanged')!;
+  // }
 
   Future<int> nums() async {
     final prefs = await SharedPreferences.getInstance();
@@ -41,19 +45,26 @@ class AppThemeController extends GetxController {
     } else {
       currentColor = Colors.blue.obs;
     }
+    update();
   }
 
   AppThemeController({int number = 0, bool isChanged = false}) {
-    
-    colorNow();
+  // AppThemeController() {
+    // colorNow();
     currentColor = Rx<Color>(appColor[number]);
-    
   }
+
+  
+  // @override
+  // void onInit() {
+  //   super.onInit();
+  //   colorNow();
+  // }
 
   Random random = Random();
 
   void activatedTheme() async {
-    int randomInt = random.nextInt(5);
+    int randomInt = random.nextInt(9);
 
     final prefs = await SharedPreferences.getInstance();
 
