@@ -23,7 +23,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Obx(() {
       print("onstart value: ${appThemeController.currentColor.value}");
       return Scaffold(
