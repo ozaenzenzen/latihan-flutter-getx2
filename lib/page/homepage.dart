@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text("Train Getx 2"),
           backgroundColor: appThemeController.currentColor.value,
+          elevation: 0,
         ),
         body: Container(
           alignment: Alignment.center,
