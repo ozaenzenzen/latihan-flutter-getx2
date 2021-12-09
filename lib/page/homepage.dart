@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_2/apptheme_controller.dart';
-import 'package:flutter_getx_2/incredecre_controller.dart';
+import 'package:flutter_getx_2/controller/apptheme_controller.dart';
+import 'package:flutter_getx_2/controller/incredecre_controller.dart';
 import 'package:flutter_getx_2/page/secondpage.dart';
 import 'package:get/get.dart';
 
@@ -15,11 +15,11 @@ class _HomePageState extends State<HomePage> {
   IncreDecreController controller = Get.find<IncreDecreController>();
   AppThemeController appThemeController = Get.find<AppThemeController>();
 
-  @override
-  void initState() {
-    // appThemeController!.colorNow();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   // appThemeController!.colorNow();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {

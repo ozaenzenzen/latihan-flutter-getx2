@@ -45,7 +45,7 @@ class AppThemeController extends GetxController {
     } else {
       currentColor = Colors.blue.obs;
     }
-    update();
+    // update();
   }
 
   // AppThemeController({int number = 0, bool isChanged = false}) {

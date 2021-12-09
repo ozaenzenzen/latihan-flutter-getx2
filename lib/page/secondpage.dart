@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_2/apptheme_controller.dart';
-import 'package:flutter_getx_2/incredecre_controller.dart';
+import 'package:flutter_getx_2/controller/apptheme_controller.dart';
+import 'package:flutter_getx_2/controller/incredecre_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
