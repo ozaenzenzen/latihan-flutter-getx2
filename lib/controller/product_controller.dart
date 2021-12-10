@@ -45,6 +45,66 @@ class ProductController extends GetxController {
       description: "ss",
       picture: "ssss",
     ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
+    ProductModel(
+      id: "0s0s0s0",
+      name: "name",
+      description: "ss",
+      picture: "ssss",
+    ),
   ].obs;
 
   get items{
