@@ -6,6 +6,7 @@ import 'package:flutter_getx_2/controller/product_controller.dart';
 import 'package:flutter_getx_2/page/homepage.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,8 +34,11 @@ class _MyAppState extends State<MyApp> {
           defaultTransition: Transition.cupertino,
           onInit: () {
             Get.put(IncreDecreController());
-            Get.put(AppThemeController());
             Get.put(ProductController());
+            Get.put(AppThemeController());
+            // Get.put(AppThemeController(number: prefs.getInt('colorNumber')!));
+            // final prefs = await SharedPreferences.getInstance();
+            
           },
         );
       },
