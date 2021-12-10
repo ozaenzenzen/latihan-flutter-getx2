@@ -15,16 +15,10 @@ class _HomePageState extends State<HomePage> {
   IncreDecreController controller = Get.find<IncreDecreController>();
   AppThemeController appThemeController = Get.find<AppThemeController>();
 
-  // @override
-  // void initState() {
-  //   // appThemeController!.colorNow();
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      print("onstart value: ${appThemeController.currentColor.value}");
+      // print("onstart value: ${appThemeController.currentColor.value}");
       return Scaffold(
         appBar: AppBar(
           title: const Text("Train Getx 2"),
