@@ -48,10 +48,10 @@ class AppThemeController extends GetxController {
     // update();
   }
 
-  // AppThemeController({int number = 0, bool isChanged = false}) {
-  AppThemeController() {
-    colorNow();
-    // currentColor = Rx<Color>(appColor[number]);
+  AppThemeController({int number = 0, bool isChanged = false}) {
+  // AppThemeController() {
+    // colorNow();
+    currentColor = Rx<Color>(appColor[number]);
   }
 
   
