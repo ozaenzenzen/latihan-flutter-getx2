@@ -34,10 +34,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text("Obx: "),
-                  Obx(() {
-                    return Text(
-                        "Increment counter: ${controller.count1.value}");
-                  }),
+                  Text("Increment counter: ${controller.count1.value}"),
                 ],
               ),
               const SizedBox(height: 10),
