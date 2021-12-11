@@ -22,6 +22,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   AppThemeController appThemeController = AppThemeController();
 
+  int numberColor = 0;
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -36,9 +38,8 @@ class _MyAppState extends State<MyApp> {
             Get.put(IncreDecreController());
             Get.put(ProductController());
             Get.put(AppThemeController());
-            // Get.put(AppThemeController(number: prefs.getInt('colorNumber')!));
+            // Get.put(AppThemeController(number: snapshot.data!));
             // final prefs = await SharedPreferences.getInstance();
-            
           },
         );
       },
