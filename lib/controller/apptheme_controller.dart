@@ -7,8 +7,6 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppThemeController extends GetxController {
-  // bool? isChanged = false;
-
   List<Color> appColor = [
     Colors.pink,
     Colors.red,
@@ -17,18 +15,11 @@ class AppThemeController extends GetxController {
     Colors.orange,
     Colors.tealAccent,
     Colors.green,
-    Colors.blue,
+    Colors.lightBlue,
     Colors.indigo,
   ];
 
-  // Rx<Color> currentColor;
   Rx<Color> currentColor = Colors.blue.obs;
-  // Rx<Color> currentColor = Colors.blue.obs;
-
-  // Future<bool> changed() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   return prefs.getBool('isChanged')!;
-  // }
 
   Future<int> nums() async {
     final prefs = await SharedPreferences.getInstance();
@@ -41,7 +32,7 @@ class AppThemeController extends GetxController {
 
     print(isChanged);
     if (isChanged == true) {
-      currentColor.value  = appColor[prefs.getInt('colorNumber')!];
+      currentColor.value = appColor[prefs.getInt('colorNumber')!];
       // currentColor = Rx<Color>(appColor[prefs.getInt('colorNumber')!.toInt()]);
       print("current color: $currentColor");
     } else {
@@ -50,14 +41,6 @@ class AppThemeController extends GetxController {
     // update();
   }
 
-  // AppThemeController({int number = 0, bool isChanged = false}) {
-  // // AppThemeController() {
-  //   colorNow();
-  //   // currentColor = Rx<Color>(appColor[number]);
-  //   // currentColor = Rx<Color>(appColor[number]);
-  // }
-
-  
   @override
   void onInit() {
     colorNow();
