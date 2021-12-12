@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_2/controller/apptheme_controller.dart';
 import 'package:flutter_getx_2/controller/incredecre_controller.dart';
@@ -31,11 +32,19 @@ class _SecondPageState extends State<SecondPage> {
           elevation: 0,
         ),
         body: ListView.builder(
-          itemCount: productController.items.length,
+          itemCount: productController.data.length,
+          // itemCount: productController.items.length,
           itemBuilder: (context, index) {
             return ListTile(
-              title: Text("${productController.items[index].name}"),
-              subtitle: Text("${productController.items[index].description}"),
+              title: Text("${productController.data[index].name}"),
+              subtitle: Text("${productController.data[index].description}"),
+              leading: Icon(
+                Icons.apps,
+                size: screenUtil.setSp(30),
+              ),
+              onTap: () {},
+              // title: Text("${productController.items[index].name}"),
+              // subtitle: Text("${productController.items[index].description}"),
             );
           },
         ),
