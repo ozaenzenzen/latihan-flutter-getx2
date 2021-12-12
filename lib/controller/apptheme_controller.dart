@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AppThemeController extends GetxController {
   List<Color> appColor = [
-    Colors.pink,
+    Colors.limeAccent,
     Colors.red,
     Colors.teal,
     Colors.purpleAccent,
@@ -30,11 +30,10 @@ class AppThemeController extends GetxController {
     final prefs = await SharedPreferences.getInstance();
     bool? isChanged = prefs.getBool('isChanged');
 
-    print(isChanged);
+    // print(isChanged);
     if (isChanged == true) {
       currentColor.value = appColor[prefs.getInt('colorNumber')!];
-      // currentColor = Rx<Color>(appColor[prefs.getInt('colorNumber')!.toInt()]);
-      print("current color: $currentColor");
+      // print("current color: $currentColor");
     } else {
       currentColor.value = Colors.blue;
     }
