@@ -83,6 +83,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_fam_plugin_1:
+    dependency: "direct overridden"
+    description:
+      path: "../flutter_fam_plugin_1"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter_lints:
     dependency: "direct dev"
     description:
