@@ -1,0 +1,31 @@
+class ProfileModel {
+    ProfileModel({
+        this.postId,
+        this.id,
+        this.name,
+        this.email,
+        this.body,
+    });
+
+    final int? postId;
+    final int? id;
+    final String? name;
+    final String? email;
+    final String? body;
+
+    factory ProfileModel.fromJson(Map<String, dynamic> json) => ProfileModel(
+        postId: json["postId"],
+        id: json["id"],
+        name: json["name"],
+        email: json["email"],
+        body: json["body"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "postId": postId,
+        "id": id,
+        "name": name,
+        "email": email,
+        "body": body,
+    };
+}
