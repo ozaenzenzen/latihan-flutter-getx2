@@ -5,6 +5,7 @@ import 'package:flutter_getx_2/controller/incredecre_controller.dart';
 import 'package:flutter_getx_2/controller/product_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:flutter_fam_plugin_1/profilepage.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -42,9 +43,15 @@ class _SecondPageState extends State<SecondPage> {
                 Icons.apps,
                 size: screenUtil.setSp(30),
               ),
-              onTap: () {},
-              // title: Text("${productController.items[index].name}"),
-              // subtitle: Text("${productController.items[index].description}"),
+              onTap: () {
+                Get.to(
+                  () => const ProfilePage(),
+                  arguments: {
+                    'title': productController.data[index].name,
+                    'subtitle': productController.data[index].description,
+                  },
+                );
+              },
             );
           },
         ),
