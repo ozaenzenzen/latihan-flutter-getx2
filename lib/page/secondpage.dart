@@ -37,6 +37,7 @@ class _SecondPageState extends State<SecondPage> {
           appBar: AppBar(
             title: const Text("Second Page"),
             backgroundColor: appThemeController.currentColor.value,
+            // backgroundColor: appThemeController.currentColor.value,
             elevation: 0,
           ),
           // body: ListView.builder(
@@ -71,12 +72,12 @@ class _SecondPageState extends State<SecondPage> {
             },
             children: [
               SecondPageProductTab(),
-              const SecondPageProfileTab(),
+              SecondPageProfileTab(),
             ],
           ),
           bottomNavigationBar: BottomAppBar(
-            elevation: 1,
-            color: appThemeController.currentColor.value,
+            elevation: 20,
+            color: Colors.white,
             child: SizedBox(
               height: screenUtil.setHeight(60),
               child: Row(
@@ -96,14 +97,14 @@ class _SecondPageState extends State<SecondPage> {
                             Icons.apps_outlined,
                             size: screenUtil.setSp(30),
                             color:
-                                currentTab == 0 ? Colors.white : Colors.black,
+                                currentTab == 0 ? appThemeController.currentColor.value : Colors.black45,
                           ),
                           // const Text("Product"),
                           Text(
                             "Product",
                             style: TextStyle(
                               color:
-                                  currentTab == 0 ? Colors.white : Colors.black,
+                                  currentTab == 0 ? appThemeController.currentColor.value : Colors.black45,
                             ),
                           ),
                         ],
@@ -124,14 +125,14 @@ class _SecondPageState extends State<SecondPage> {
                             Icons.person,
                             size: screenUtil.setSp(30),
                             color:
-                                currentTab == 1 ? Colors.white : Colors.black,
+                                currentTab == 1 ? appThemeController.currentColor.value : Colors.black45,
                           ),
                           // const Text("Profile"),
                           Text(
                             "Profile",
                             style: TextStyle(
                               color:
-                                  currentTab == 1 ? Colors.white : Colors.black,
+                                  currentTab == 1 ? appThemeController.currentColor.value : Colors.black45,
                             ),
                           ),
                         ],
