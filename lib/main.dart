@@ -3,6 +3,7 @@ import 'package:flutter_getx_2/constants.dart';
 import 'package:flutter_getx_2/controller/apptheme_controller.dart';
 import 'package:flutter_getx_2/controller/incredecre_controller.dart';
 import 'package:flutter_getx_2/controller/product_controller.dart';
+import 'package:flutter_getx_2/controller/profile_controller.dart';
 import 'package:flutter_getx_2/page/homepage.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -37,6 +38,7 @@ class _MyAppState extends State<MyApp> {
             Get.put(IncreDecreController());
             Get.put(ProductController());
             Get.put(AppThemeController());
+            Get.put(ProfileController());
             // Get.put(AppThemeController(number: snapshot.data!));
             // final prefs = await SharedPreferences.getInstance();
           },
