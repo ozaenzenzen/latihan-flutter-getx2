@@ -4,7 +4,7 @@ import 'package:flutter_getx_2/controller/incredecre_controller.dart';
 import 'package:flutter_getx_2/controller/product_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:flutter_fam_plugin_1/profilepage.dart';
+import 'package:flutter_fam_plugin_1/productdetailpage.dart';
 
 class SecondPageProductTab extends StatelessWidget {
   SecondPageProductTab({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class SecondPageProductTab extends StatelessWidget {
           ),
           onTap: () {
             Get.to(
-              () => const ProfilePage(),
+              () => const ProductDetailPage(),
               arguments: {
                 'title': productController.data[index].name,
                 'subtitle': productController.data[index].description,
