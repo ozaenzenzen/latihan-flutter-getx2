@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_2/controller/apptheme_controller.dart';
 import 'package:flutter_getx_2/controller/incredecre_controller.dart';
@@ -7,7 +6,7 @@ import 'package:flutter_getx_2/page/secondpage_product.dart';
 import 'package:flutter_getx_2/page/secondpage_profile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:flutter_fam_plugin_1/profilepage.dart';
+// import 'package:flutter_fam_plugin_1/profilepage.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({Key? key}) : super(key: key);
