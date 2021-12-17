@@ -64,7 +64,8 @@ class _HomePageState extends State<HomePage> {
                         controller.increment2();
                       });
                     },
-                    child: const Text("Add"),
+                    child: const Icon(Icons.add),
+                    // child: const Text("Add"),
                   ),
                   const SizedBox(width: 10),
                   ElevatedButton(
@@ -78,7 +79,8 @@ class _HomePageState extends State<HomePage> {
                         controller.decrement2();
                       });
                     },
-                    child: const Text("Subtract"),
+                    child: const Icon(Icons.remove),
+                    // child: const Text("Subtract"),
                   ),
                 ],
               ),
